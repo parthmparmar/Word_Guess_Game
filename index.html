@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strangers Thing Word Guess</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Word Guess Game</h1>
+        <p class="lead">Press any letter on the keyboard to guess what the word below maybe.  As you can see the theme is Stranger Things from Netflix.
+        </p>
+        <ul>
+            <li class = "font-weight-bold">Rules:</li>
+            <li>guess a letter using the keyboard</li>
+            <li>you have 10 tries</li>
+            <li>a correct guess is not counted against you</li>
+            <li>if you know the word, just type it out</li>
+            <li>repeat letters will be shown on the same guess</li>
+        </ul>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button">New Word</a>
+    </div>
+    <section class = "game container text-center">
+        <h1 id="win_word_disp">WORD</h1>
+        <h3 id="num_guess">Number of guess left:</h3>
+        <h5 id="letters_used">Letters Already Gussed: </h5>
+    </section>
+    <script src="assets/javascript/game.js"></script>
+</body>
+</html>
