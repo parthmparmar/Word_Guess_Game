@@ -1,4 +1,4 @@
-var word_list = ["parth", "parmar", "cat"];
+var word_list = ["eleven", "demogorgon", "hopper", "hawkins", "experiment", "laboratory","russian", "gate", "demodogs", "rats", "eggo"];
 var rand_index = Math.floor(Math.random()*word_list.length);
 var win_word = word_list[rand_index];
 var win_word_count = win_word.length;
@@ -8,9 +8,10 @@ var letter_array = [];
 var disp_array = [];
 var num_guss = 10;
 var letter_guss = [];
+var g_over = true;
 
 
-
+console.log(win_word)
 function create_disp () {
     for (var j=0;j<((win_word_count-1)*2)+1;j=j+2){
         disp_array[j]="_";
@@ -28,7 +29,7 @@ function disp_conv() {
 
 disp_conv()
 
-console.log(word_disp)
+// console.log(word_disp)
 
 var word_id = document.getElementById("win_word_disp");
 var guess_id = document.getElementById("num_guess");
@@ -43,9 +44,9 @@ document.onkeyup = function(event) {
     word_disp = "";
 
     if (num_guss == 0) {
-        guess_id.textContent = "You used up all your tries, refresh page or click new word to try again."
+        guess_id.textContent = "You used up all your tries, refresh page or click new word to play again."
     } 
-    else{
+    else if (g_over) {
             if (letter_guss.includes(letter)){
                 // do something
             }
@@ -61,6 +62,14 @@ document.onkeyup = function(event) {
                         disp_conv()
                         word_id.textContent = word_disp;
                         let_gus_id.append(letter + " ");
+
+                        if(word_id.innerText.includes("_")) {
+                            // do something
+                        }
+                        else {
+                            guess_id.innerText = "You Win!! - Please refresh page or click new word to play again."
+                            g_over =false;
+                        }
                     }
                     else {
                         num_guss--;
@@ -72,9 +81,10 @@ document.onkeyup = function(event) {
                     // do something
                 }
             }
+        }
         
-    }
 }
+
 
 // c_a_t
 // 01234

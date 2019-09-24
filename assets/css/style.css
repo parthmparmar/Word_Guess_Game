@@ -1,0 +1,15 @@
+.card{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px; 
+    border: none;
+}
+body {
+    background-color: black;
+}
+
+.jumbotron{
+    background-color: black;
+}
