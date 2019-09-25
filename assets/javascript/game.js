@@ -9,9 +9,38 @@ var disp_array = [];
 var num_guss = 10;
 var letter_guss = [];
 var g_over = true;
+var wins = 0;
+var word_id = document.getElementById("win_word_disp");
+var guess_id = document.getElementById("num_guess");
+var let_gus_id = document.getElementById("letters_used");
+var wins_id = document.getElementById("wins");
+
+startup();
+// guess_id.textContent = "Number of Guesses Left: " + num_guss;
+// word_id.textContent = word_disp;
+// word_disp = "";
+
+function startup() {
+    rand_index = Math.floor(Math.random()*word_list.length);
+    win_word = word_list[rand_index];
+    win_word_count = win_word.length;
+    word_disp = ""
+    letter_array = [];
+    disp_array = [];
+    letter_guss = [];
+    g_over = true;
+    create_disp();
+    disp_conv();
+    console.log(win_word);
+    console.log(word_disp);
+    guess_id.textContent = "Number of Guesses Left: " + num_guss;
+    word_id.textContent = word_disp;
+    word_disp = "";
+};
 
 
-console.log(win_word)
+// console.log(win_word);
+// console.log(word_disp);
 function create_disp () {
     for (var j=0;j<((win_word_count-1)*2)+1;j=j+2){
         disp_array[j]="_";
@@ -19,7 +48,7 @@ function create_disp () {
     }
 }
 
-create_disp()
+create_disp();
 
 function disp_conv() {
     for (var k=0;k<disp_array.length;k++){
@@ -27,16 +56,9 @@ function disp_conv() {
     }
 }
 
-disp_conv()
+disp_conv();
 
 // console.log(word_disp)
-
-var word_id = document.getElementById("win_word_disp");
-var guess_id = document.getElementById("num_guess");
-var let_gus_id = document.getElementById("letters_used");
-guess_id.textContent = "Number of Guesses Left: " + num_guss;
-word_id.textContent = word_disp;
-word_disp = "";
 
 document.onkeyup = function(event) {
     // Captures the key press, converts it to lowercase, and saves it to a variable.
@@ -67,8 +89,11 @@ document.onkeyup = function(event) {
                             // do something
                         }
                         else {
-                            guess_id.innerText = "You Win!! - Please refresh page or click new word to play again."
+                            guess_id.innerText = "You Win!! - Please refresh page or click new word to play again.";
                             g_over =false;
+                            wins++;
+                            wins_id.innerText = "Number of Wins: " + wins;
+                            startup();
                         }
                     }
                     else {
@@ -84,9 +109,3 @@ document.onkeyup = function(event) {
         }
         
 }
-
-
-// c_a_t
-// 01234
-// cat
-// 012

@@ -17,7 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">New Word <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="index.html">New Game<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link rules" href="rules.html">Rules</a>
             </div>
     </div>
@@ -28,12 +28,22 @@
             <h1 class="card-title display-4">Word Guess Game</h1>
             <p class="card-text font-italic">Press any letter on the keyboard to guess the word below.</p>
         </div>
+        
+    <!-- <div class="row">
+        <div class="col-md-6 text-center border rounded text-white container">
+            <h1 class="card-title display-4">Word Guess Game</h1>
+            <p class="card-text font-italic">Press any letter on the keyboard to guess the word below.</p>
+        </div>
+    </div>   -->
+</div>
+    <div class="row">
+        <section class = "game container border rounded text-center text-light col-md-4">
+            <h1 id="win_word_disp">WORD</h1>
+            <h3 id="num_guess">Number of guess left:</h3>
+            <h5 id="letters_used">Letters Already Guessed: </h5>
+            <h5 id="wins">Number of Wins: </h5>
+        </section>
     </div>
-    <section class = "game container text-center text-light">
-        <h1 id="win_word_disp">WORD</h1>
-        <h3 id="num_guess">Number of guess left:</h3>
-        <h5 id="letters_used">Letters Already Guessed: </h5>
-    </section>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
